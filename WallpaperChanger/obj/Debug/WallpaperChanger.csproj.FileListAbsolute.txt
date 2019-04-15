@@ -1,0 +1,14 @@
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\bin\Debug\WallpaperChanger.exe.config
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\bin\Debug\WallpaperChanger.exe
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\bin\Debug\WallpaperChanger.pdb
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanger.csprojAssemblyReference.cache
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanging.Form1.resources
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanger.Properties.Resources.resources
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanger.csproj.GenerateResource.cache
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanger.csproj.CoreCompileInputs.cache
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanger.exe
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanger.pdb
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\bin\Debug\WallpaperChanger.exe.manifest
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\bin\Debug\WallpaperChanger.application
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanger.exe.manifest
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanger.application
