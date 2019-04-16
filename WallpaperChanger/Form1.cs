@@ -15,21 +15,29 @@ namespace WallpaperChanging
 {
     public partial class Form1 : Form
     {
+
+ 
         public Form1()
         {
             InitializeComponent();
+  
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+       
         }
-        string FileName;
 
+        string FileName;
         const int SetDeskWallpaper = 20;
         const int UpdateIniFile = 0x01;
         const int SendWinIniChange = 0x02;
         int index = 0;
+        string nmUsuario = Environment.UserName;
+        public string RestoCaminho { get; private set; }
+        public bool NaoAlterouPasta { get; set; }
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
@@ -43,7 +51,17 @@ namespace WallpaperChanging
 
         private void UpdateWallpaper()
         {
-            string path = @"C:\Users\T-Gamer\Pictures\walpapers-sao";
+
+            string relativePath = null;
+            if (NaoAlterouPasta == false)
+            {
+                relativePath = string.Format(@"C:\Users\{1}\Pictures", 1, nmUsuario);
+            }
+            else {
+                relativePath = relativePath = string.Format(@"C:\Users\{1}", 1, RestoCaminho);
+            }
+
+            string path = relativePath;
 
             var directory = new DirectoryInfo(path);
             int totalFiles = directory.GetFiles().Count<FileInfo>();
@@ -58,40 +76,92 @@ namespace WallpaperChanging
             }
 
 
-            FileName = @"C:\Users\T-Gamer\Pictures\walpapers-sao\" + fileName;
+            FileName = string.Format("{1}\\{2} ", 2,relativePath, fileName);
 
-            labelFileName.Text = FileName;
+            LabelFileName.Text = FileName;
             Set();
 
         }
 
-        private void buttonStart_Click(object sender, EventArgs e)
+        private void BtnAlteraImagem_Click(object sender, EventArgs e)
         {
             UpdateWallpaper();
         }
 
-        private void labelFileName_Click(object sender, EventArgs e)
+        private void LabelFileName_Click(object sender, EventArgs e)
         {
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerAlteraImagem_Tick(object sender, EventArgs e)
         {
             UpdateWallpaper();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnAlteraIntervalo_Click(object sender, EventArgs e)
         {
-            if (txtTempo.Text.Length == 0)
+            if (string.IsNullOrEmpty(TxtTempo.Text) || Convert.ToInt32(TxtTempo.Text) < 10000)
             {
-                timer1.Interval = 30000;
+                TimerAlteraImagem.Interval = 10000;
+                LabelIntervaloTempo.Text = "10s";
+                MessageBox.Show("o minimo que aceitamos é 10 segundos :)");
             }
             else
             {
-                timer1.Interval = Convert.ToInt32(txtTempo.Text);
+                if ((Convert.ToInt32(TxtTempo.Text) / 1000) < 60)
+                {
+                    TimerAlteraImagem.Interval = Convert.ToInt32(TxtTempo.Text);
+                    LabelIntervaloTempo.Text = string.Format("{1}s", 1, Convert.ToInt32(TxtTempo.Text) / 1000);
+                }
+                else
+                {
+                    TimerAlteraImagem.Interval = Convert.ToInt32(TxtTempo.Text);
+                    LabelIntervaloTempo.Text = string.Format("{1:#,0.00} min", 1, (Convert.ToDecimal(TxtTempo.Text) / 1000) / 60);
+                }
+
+
             }
         }
 
-        private void txtTempo_TextChanged(object sender, EventArgs e)
+        private void TxtTempo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void BtnAlteraPasta_Click(object sender, EventArgs e)
+        {
+            EscolherPasta.ShowDialog();
+            string pasta = EscolherPasta.SelectedPath;
+
+            if (pasta.Length != 0)
+            {
+                RestoCaminho = pasta.Substring(pasta.LastIndexOf(nmUsuario));
+                NaoAlterouPasta = true;
+                UpdateWallpaper();
+                LabelPastaImagens.Text = pasta;
+            }
+            else
+            {
+                MessageBox.Show("por favor, insira uma pasta valida");
+            }
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelPastaImagens_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EscolherPasta_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelIntervaloTempo_Click(object sender, EventArgs e)
         {
 
         }

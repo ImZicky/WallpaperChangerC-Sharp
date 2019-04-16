@@ -29,99 +29,177 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.buttonStart = new System.Windows.Forms.Button();
-            this.labelFileName = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtTempo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.BtnAlteraImagem = new System.Windows.Forms.Button();
+            this.LabelFileName = new System.Windows.Forms.Label();
+            this.TimerAlteraImagem = new System.Windows.Forms.Timer(this.components);
+            this.BtnAlteraIntervalo = new System.Windows.Forms.Button();
+            this.TxtTempo = new System.Windows.Forms.TextBox();
+            this.LabelTitulo = new System.Windows.Forms.Label();
+            this.LabelAlteraImagem = new System.Windows.Forms.Label();
+            this.LabelAlteraIntervalo = new System.Windows.Forms.Label();
+            this.BtnAlteraPasta = new System.Windows.Forms.Button();
+            this.LabelAlteraPasta = new System.Windows.Forms.Label();
+            this.LabelPastaImagens = new System.Windows.Forms.Label();
+            this.EscolherPasta = new System.Windows.Forms.FolderBrowserDialog();
+            this.LabelIntervaloTempo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // buttonStart
+            // BtnAlteraImagem
             // 
-            this.buttonStart.Location = new System.Drawing.Point(12, 54);
-            this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(129, 22);
-            this.buttonStart.TabIndex = 0;
-            this.buttonStart.Text = "mudar imagem";
-            this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            this.BtnAlteraImagem.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BtnAlteraImagem.Location = new System.Drawing.Point(10, 69);
+            this.BtnAlteraImagem.Name = "BtnAlteraImagem";
+            this.BtnAlteraImagem.Size = new System.Drawing.Size(129, 22);
+            this.BtnAlteraImagem.TabIndex = 0;
+            this.BtnAlteraImagem.Text = "Alterar Imagem";
+            this.BtnAlteraImagem.UseVisualStyleBackColor = false;
+            this.BtnAlteraImagem.Click += new System.EventHandler(this.BtnAlteraImagem_Click);
             // 
-            // labelFileName
+            // LabelFileName
             // 
-            this.labelFileName.AutoSize = true;
-            this.labelFileName.Location = new System.Drawing.Point(147, 59);
-            this.labelFileName.Name = "labelFileName";
-            this.labelFileName.Size = new System.Drawing.Size(91, 13);
-            this.labelFileName.TabIndex = 1;
-            this.labelFileName.Text = "[ imagem padrão ]";
-            this.labelFileName.Click += new System.EventHandler(this.labelFileName_Click);
+            this.LabelFileName.AutoSize = true;
+            this.LabelFileName.BackColor = System.Drawing.Color.DarkKhaki;
+            this.LabelFileName.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.LabelFileName.Location = new System.Drawing.Point(149, 74);
+            this.LabelFileName.Name = "LabelFileName";
+            this.LabelFileName.Size = new System.Drawing.Size(91, 13);
+            this.LabelFileName.TabIndex = 1;
+            this.LabelFileName.Text = "[ imagem padrão ]";
+            this.LabelFileName.Click += new System.EventHandler(this.LabelFileName_Click);
             // 
-            // timer1
+            // TimerAlteraImagem
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 300000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.TimerAlteraImagem.Enabled = true;
+            this.TimerAlteraImagem.Interval = 300000;
+            this.TimerAlteraImagem.Tick += new System.EventHandler(this.TimerAlteraImagem_Tick);
             // 
-            // button1
+            // BtnAlteraIntervalo
             // 
-            this.button1.Location = new System.Drawing.Point(13, 102);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "alterar intervalo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnAlteraIntervalo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BtnAlteraIntervalo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.BtnAlteraIntervalo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnAlteraIntervalo.Location = new System.Drawing.Point(10, 128);
+            this.BtnAlteraIntervalo.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnAlteraIntervalo.Name = "BtnAlteraIntervalo";
+            this.BtnAlteraIntervalo.Size = new System.Drawing.Size(128, 23);
+            this.BtnAlteraIntervalo.TabIndex = 2;
+            this.BtnAlteraIntervalo.Text = "Alterar Intervalo";
+            this.BtnAlteraIntervalo.UseVisualStyleBackColor = false;
+            this.BtnAlteraIntervalo.Click += new System.EventHandler(this.BtnAlteraIntervalo_Click);
             // 
-            // txtTempo
+            // TxtTempo
             // 
-            this.txtTempo.Location = new System.Drawing.Point(147, 104);
-            this.txtTempo.Name = "txtTempo";
-            this.txtTempo.Size = new System.Drawing.Size(79, 20);
-            this.txtTempo.TabIndex = 3;
-            this.txtTempo.TextChanged += new System.EventHandler(this.txtTempo_TextChanged);
+            this.TxtTempo.Location = new System.Drawing.Point(150, 130);
+            this.TxtTempo.Name = "TxtTempo";
+            this.TxtTempo.Size = new System.Drawing.Size(91, 20);
+            this.TxtTempo.TabIndex = 3;
+            this.TxtTempo.TextChanged += new System.EventHandler(this.TxtTempo_TextChanged);
             // 
-            // label1
+            // LabelTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(147, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "BACKGROUND CHANGER";
+            this.LabelTitulo.AutoSize = true;
+            this.LabelTitulo.BackColor = System.Drawing.Color.Olive;
+            this.LabelTitulo.Location = new System.Drawing.Point(34, 9);
+            this.LabelTitulo.Name = "LabelTitulo";
+            this.LabelTitulo.Padding = new System.Windows.Forms.Padding(150, 1, 150, 1);
+            this.LabelTitulo.Size = new System.Drawing.Size(439, 15);
+            this.LabelTitulo.TabIndex = 4;
+            this.LabelTitulo.Text = "BACKGROUND CHANGER";
             // 
-            // label2
+            // LabelAlteraImagem
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Mudar Imagem Manualmente";
+            this.LabelAlteraImagem.AutoSize = true;
+            this.LabelAlteraImagem.Location = new System.Drawing.Point(12, 47);
+            this.LabelAlteraImagem.Name = "LabelAlteraImagem";
+            this.LabelAlteraImagem.Padding = new System.Windows.Forms.Padding(3);
+            this.LabelAlteraImagem.Size = new System.Drawing.Size(150, 19);
+            this.LabelAlteraImagem.TabIndex = 5;
+            this.LabelAlteraImagem.Text = "Mudar Imagem Manualmente";
             // 
-            // label3
+            // LabelAlteraIntervalo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 86);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Alterar Intervalo De Tempo";
+            this.LabelAlteraIntervalo.AutoSize = true;
+            this.LabelAlteraIntervalo.Location = new System.Drawing.Point(12, 105);
+            this.LabelAlteraIntervalo.Name = "LabelAlteraIntervalo";
+            this.LabelAlteraIntervalo.Padding = new System.Windows.Forms.Padding(3);
+            this.LabelAlteraIntervalo.Size = new System.Drawing.Size(140, 19);
+            this.LabelAlteraIntervalo.TabIndex = 6;
+            this.LabelAlteraIntervalo.Text = "Alterar Intervalo De Tempo";
+            // 
+            // BtnAlteraPasta
+            // 
+            this.BtnAlteraPasta.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BtnAlteraPasta.Location = new System.Drawing.Point(11, 186);
+            this.BtnAlteraPasta.Name = "BtnAlteraPasta";
+            this.BtnAlteraPasta.Size = new System.Drawing.Size(128, 23);
+            this.BtnAlteraPasta.TabIndex = 7;
+            this.BtnAlteraPasta.Text = "Alterar Pasta";
+            this.BtnAlteraPasta.UseVisualStyleBackColor = false;
+            this.BtnAlteraPasta.Click += new System.EventHandler(this.BtnAlteraPasta_Click);
+            // 
+            // LabelAlteraPasta
+            // 
+            this.LabelAlteraPasta.AutoSize = true;
+            this.LabelAlteraPasta.Location = new System.Drawing.Point(12, 164);
+            this.LabelAlteraPasta.Name = "LabelAlteraPasta";
+            this.LabelAlteraPasta.Padding = new System.Windows.Forms.Padding(3);
+            this.LabelAlteraPasta.Size = new System.Drawing.Size(133, 19);
+            this.LabelAlteraPasta.TabIndex = 8;
+            this.LabelAlteraPasta.Text = "Alterar Pasta De Imagens";
+            // 
+            // LabelPastaImagens
+            // 
+            this.LabelPastaImagens.AutoSize = true;
+            this.LabelPastaImagens.BackColor = System.Drawing.Color.DarkKhaki;
+            this.LabelPastaImagens.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.LabelPastaImagens.Location = new System.Drawing.Point(145, 191);
+            this.LabelPastaImagens.Name = "LabelPastaImagens";
+            this.LabelPastaImagens.Size = new System.Drawing.Size(81, 13);
+            this.LabelPastaImagens.TabIndex = 9;
+            this.LabelPastaImagens.Text = "[ pasta padrão ]";
+            this.LabelPastaImagens.Click += new System.EventHandler(this.LabelPastaImagens_Click);
+            // 
+            // EscolherPasta
+            // 
+            this.EscolherPasta.HelpRequest += new System.EventHandler(this.EscolherPasta_HelpRequest);
+            // 
+            // LabelIntervaloTempo
+            // 
+            this.LabelIntervaloTempo.AutoSize = true;
+            this.LabelIntervaloTempo.BackColor = System.Drawing.Color.DarkKhaki;
+            this.LabelIntervaloTempo.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.LabelIntervaloTempo.Location = new System.Drawing.Point(247, 133);
+            this.LabelIntervaloTempo.Name = "LabelIntervaloTempo";
+            this.LabelIntervaloTempo.Size = new System.Drawing.Size(84, 13);
+            this.LabelIntervaloTempo.TabIndex = 10;
+            this.LabelIntervaloTempo.Text = "[ tempo padrão ]";
+            this.LabelIntervaloTempo.Click += new System.EventHandler(this.LabelIntervaloTempo_Click);
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(441, 155);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtTempo);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.labelFileName);
-            this.Controls.Add(this.buttonStart);
+            this.BackColor = System.Drawing.Color.Teal;
+            this.BackgroundImage = global::WallpaperChanger.Properties.Resources.back;
+            this.ClientSize = new System.Drawing.Size(509, 241);
+            this.Controls.Add(this.LabelIntervaloTempo);
+            this.Controls.Add(this.LabelPastaImagens);
+            this.Controls.Add(this.LabelAlteraPasta);
+            this.Controls.Add(this.BtnAlteraPasta);
+            this.Controls.Add(this.LabelAlteraIntervalo);
+            this.Controls.Add(this.LabelAlteraImagem);
+            this.Controls.Add(this.LabelTitulo);
+            this.Controls.Add(this.TxtTempo);
+            this.Controls.Add(this.BtnAlteraIntervalo);
+            this.Controls.Add(this.LabelFileName);
+            this.Controls.Add(this.BtnAlteraImagem);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "BackgroundChanger";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,14 +208,19 @@
         #endregion
 
 
-        private System.Windows.Forms.Button buttonStart;
-        private System.Windows.Forms.Label labelFileName;
-        public System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtTempo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button BtnAlteraImagem;
+        private System.Windows.Forms.Label LabelFileName;
+        public System.Windows.Forms.Timer TimerAlteraImagem;
+        private System.Windows.Forms.Button BtnAlteraIntervalo;
+        private System.Windows.Forms.TextBox TxtTempo;
+        private System.Windows.Forms.Label LabelTitulo;
+        private System.Windows.Forms.Label LabelAlteraImagem;
+        private System.Windows.Forms.Label LabelAlteraIntervalo;
+        private System.Windows.Forms.Button BtnAlteraPasta;
+        private System.Windows.Forms.Label LabelAlteraPasta;
+        private System.Windows.Forms.Label LabelPastaImagens;
+        private System.Windows.Forms.FolderBrowserDialog EscolherPasta;
+        private System.Windows.Forms.Label LabelIntervaloTempo;
     }
 }
 
