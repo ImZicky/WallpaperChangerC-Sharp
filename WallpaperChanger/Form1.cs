@@ -61,7 +61,6 @@ namespace WallpaperChanging
             FileName = @"C:\Users\T-Gamer\Pictures\walpapers-sao\" + fileName;
 
             labelFileName.Text = FileName;
-
             Set();
 
         }
@@ -78,6 +77,23 @@ namespace WallpaperChanging
         private void timer1_Tick(object sender, EventArgs e)
         {
             UpdateWallpaper();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtTempo.Text.Length == 0)
+            {
+                timer1.Interval = 30000;
+            }
+            else
+            {
+                timer1.Interval = Convert.ToInt32(txtTempo.Text);
+            }
+        }
+
+        private void txtTempo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
