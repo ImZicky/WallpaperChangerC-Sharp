@@ -12,3 +12,7 @@ C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\bin\Debug\Wallpa
 C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\bin\Debug\WallpaperChanger.application
 C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanger.exe.manifest
 C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanger.application
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\bin\Debug\Newtonsoft.Json.dll
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\bin\Debug\Newtonsoft.Json.xml
+C:\Users\T-Gamer\source\repos\WallpaperChanger\WallpaperChanger\obj\Debug\WallpaperChanger.csproj.CopyComplete

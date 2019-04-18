@@ -10,24 +10,25 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace WallpaperChanging
 {
     public partial class Form1 : Form
     {
 
- 
+
         public Form1()
         {
             InitializeComponent();
-  
+
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
-       
+
         }
 
         string FileName;
@@ -38,6 +39,8 @@ namespace WallpaperChanging
         string nmUsuario = Environment.UserName;
         public string RestoCaminho { get; private set; }
         public bool NaoAlterouPasta { get; set; }
+        public int IntervaloTempo;
+        bool tenhoQueSalvarNovoCaminho = false;
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
@@ -56,9 +59,22 @@ namespace WallpaperChanging
             if (NaoAlterouPasta == false)
             {
                 relativePath = string.Format(@"C:\Users\{1}\Pictures", 1, nmUsuario);
+
+                string conteudo = PegarArquivoJson(relativePath);
+                if (string.IsNullOrEmpty(conteudo))
+                {
+                    relativePath = string.Format(@"C:\Users\{1}\Pictures", 1, nmUsuario);
+                }
+                else {
+                    relativePath = conteudo;
+                }
             }
             else {
                 relativePath = relativePath = string.Format(@"C:\Users\{1}", 1, RestoCaminho);
+                if (tenhoQueSalvarNovoCaminho) {
+                    SalvaCaminho(relativePath);
+                    tenhoQueSalvarNovoCaminho = false;
+                }
             }
 
             string path = relativePath;
@@ -76,15 +92,58 @@ namespace WallpaperChanging
             }
 
 
-            FileName = string.Format("{1}\\{2} ", 2,relativePath, fileName);
+            FileName = string.Format("{1}\\{2} ", 2, relativePath, fileName);
 
-            LabelFileName.Text = FileName;
+            LabelFileName.Text = FileName.Substring(FileName.LastIndexOf("\\")+1);
+            LabelPastaImagens.Text = FileName.Substring(0,FileName.LastIndexOf(LabelFileName.Text)-1);
             Set();
 
         }
 
+        private string PegarArquivoJson(string relativePath)
+        {
+            string pastaRelativePathJson = string.Format(@"C:\Users\{1}\Documents\WallpaperChanger\relativePathJson.txt", 1, nmUsuario);
+            string conteudo = string.Empty;
+
+            if (!File.Exists(pastaRelativePathJson))
+            {
+                return null;
+            }
+            else {
+                using (StreamReader sr = new StreamReader(pastaRelativePathJson))
+                {
+                    while (sr.Peek() >= 0)
+                    {
+                        conteudo = sr.ReadLine();
+                    }
+                    sr.Close();
+                }
+            }
+            string relativePathDevolvido = JsonConvert.DeserializeObject<string>(conteudo);
+            return relativePathDevolvido;
+        }
+
+        private void SalvaCaminho(string relativePath)
+        {
+            string relativePathJson = JsonConvert.SerializeObject(relativePath);
+            string pastaRelativePathJson = string.Format(@"C:\Users\{1}\Documents\WallpaperChanger\", 1, nmUsuario);
+            if (!Directory.Exists(pastaRelativePathJson))
+            {
+                Directory.CreateDirectory(pastaRelativePathJson);
+            }
+            FileStream fs = new FileStream(string.Format(@"C:\Users\{1}\Documents\WallpaperChanger\relativePathJson.txt", 1, nmUsuario), FileMode.Append);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine(relativePathJson);
+            sw.Flush();
+            sw.Close();
+            fs.Close();
+        }
+
         private void BtnAlteraImagem_Click(object sender, EventArgs e)
         {
+            TimerAlteraImagem.Stop();
+            TimerAlteraImagem.Interval = IntervaloTempo < 10000 ? 10000 : IntervaloTempo;
+            TimerAlteraImagem.Start();
             UpdateWallpaper();
         }
 
@@ -99,7 +158,15 @@ namespace WallpaperChanging
 
         private void BtnAlteraIntervalo_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(TxtTempo.Text) || Convert.ToInt32(TxtTempo.Text) < 10000)
+            if (string.IsNullOrEmpty(TxtTempo.Text) || IntervaloTempo < 10000)
+            {
+                IntervaloTempo = 10000;
+            }
+            else {
+                IntervaloTempo = Convert.ToInt32(TxtTempo.Text);
+            }
+
+            if (string.IsNullOrEmpty(TxtTempo.Text) || IntervaloTempo < 10000)
             {
                 TimerAlteraImagem.Interval = 10000;
                 LabelIntervaloTempo.Text = "10s";
@@ -109,12 +176,12 @@ namespace WallpaperChanging
             {
                 if ((Convert.ToInt32(TxtTempo.Text) / 1000) < 60)
                 {
-                    TimerAlteraImagem.Interval = Convert.ToInt32(TxtTempo.Text);
+                    TimerAlteraImagem.Interval = IntervaloTempo;
                     LabelIntervaloTempo.Text = string.Format("{1}s", 1, Convert.ToInt32(TxtTempo.Text) / 1000);
                 }
                 else
                 {
-                    TimerAlteraImagem.Interval = Convert.ToInt32(TxtTempo.Text);
+                    TimerAlteraImagem.Interval = IntervaloTempo;
                     LabelIntervaloTempo.Text = string.Format("{1:#,0.00} min", 1, (Convert.ToDecimal(TxtTempo.Text) / 1000) / 60);
                 }
 
@@ -139,6 +206,7 @@ namespace WallpaperChanging
                 NaoAlterouPasta = true;
                 UpdateWallpaper();
                 LabelPastaImagens.Text = pasta;
+                tenhoQueSalvarNovoCaminho = true;
             }
             else
             {
