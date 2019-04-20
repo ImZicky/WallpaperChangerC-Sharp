@@ -41,6 +41,7 @@ namespace WallpaperChanging
         public bool NaoAlterouPasta { get; set; }
         public int IntervaloTempo;
         bool tenhoQueSalvarNovoCaminho = false;
+        string relativePath = null;
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
@@ -55,27 +56,7 @@ namespace WallpaperChanging
         private void UpdateWallpaper()
         {
 
-            string relativePath = null;
-            if (NaoAlterouPasta == false)
-            {
-                relativePath = string.Format(@"C:\Users\{1}\Pictures", 1, nmUsuario);
-
-                string conteudo = PegarArquivoJson(relativePath);
-                if (string.IsNullOrEmpty(conteudo))
-                {
-                    relativePath = string.Format(@"C:\Users\{1}\Pictures", 1, nmUsuario);
-                }
-                else {
-                    relativePath = conteudo;
-                }
-            }
-            else {
-                relativePath = relativePath = string.Format(@"C:\Users\{1}", 1, RestoCaminho);
-                if (tenhoQueSalvarNovoCaminho) {
-                    SalvaCaminho(relativePath);
-                    tenhoQueSalvarNovoCaminho = false;
-                }
-            }
+            verificacaoInicial(); //define o path ao iniciar o programa
 
             string path = relativePath;
 
@@ -97,6 +78,34 @@ namespace WallpaperChanging
             LabelFileName.Text = FileName.Substring(FileName.LastIndexOf("\\")+1);
             LabelPastaImagens.Text = FileName.Substring(0,FileName.LastIndexOf(LabelFileName.Text)-1);
             Set();
+
+        }
+
+        private void verificacaoInicial()
+        {
+            if (NaoAlterouPasta == false)
+            {
+                relativePath = string.Format(@"C:\Users\{1}\Pictures", 1, nmUsuario);
+
+                string conteudo = PegarArquivoJson(relativePath);
+                if (string.IsNullOrEmpty(conteudo))
+                {
+                    relativePath = string.Format(@"C:\Users\{1}\Pictures", 1, nmUsuario);
+                }
+                else
+                {
+                    relativePath = conteudo;
+                }
+            }
+            else
+            {
+                relativePath = relativePath = string.Format(@"C:\Users\{1}", 1, RestoCaminho);
+                if (tenhoQueSalvarNovoCaminho)
+                {
+                    SalvaCaminho(relativePath);
+                    tenhoQueSalvarNovoCaminho = false;
+                }
+            }
 
         }
 

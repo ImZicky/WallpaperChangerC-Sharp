@@ -63,7 +63,7 @@
             this.LabelFileName.BackColor = System.Drawing.Color.DarkKhaki;
             this.LabelFileName.ForeColor = System.Drawing.Color.SaddleBrown;
             this.LabelFileName.Location = new System.Drawing.Point(165, 47);
-            this.LabelFileName.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.LabelFileName.Margin = new System.Windows.Forms.Padding(0);
             this.LabelFileName.Name = "LabelFileName";
             this.LabelFileName.Padding = new System.Windows.Forms.Padding(3);
             this.LabelFileName.Size = new System.Drawing.Size(97, 19);
@@ -94,17 +94,17 @@
             // 
             // TxtTempo
             // 
-            this.TxtTempo.Location = new System.Drawing.Point(167, 127);
-            this.TxtTempo.Multiline = true;
+            this.TxtTempo.Location = new System.Drawing.Point(167, 130);
             this.TxtTempo.Name = "TxtTempo";
-            this.TxtTempo.Size = new System.Drawing.Size(85, 24);
+            this.TxtTempo.Size = new System.Drawing.Size(95, 20);
             this.TxtTempo.TabIndex = 3;
             this.TxtTempo.TextChanged += new System.EventHandler(this.TxtTempo_TextChanged);
             // 
             // LabelTitulo
             // 
             this.LabelTitulo.AutoSize = true;
-            this.LabelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(50)))), ((int)(((byte)(20)))));
+            this.LabelTitulo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.LabelTitulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LabelTitulo.Location = new System.Drawing.Point(13, 13);
             this.LabelTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.LabelTitulo.Name = "LabelTitulo";
@@ -166,9 +166,9 @@
             this.LabelPastaImagens.Location = new System.Drawing.Point(165, 164);
             this.LabelPastaImagens.Name = "LabelPastaImagens";
             this.LabelPastaImagens.Padding = new System.Windows.Forms.Padding(3);
-            this.LabelPastaImagens.Size = new System.Drawing.Size(87, 19);
+            this.LabelPastaImagens.Size = new System.Drawing.Size(96, 19);
             this.LabelPastaImagens.TabIndex = 9;
-            this.LabelPastaImagens.Text = "[ pasta padrão ]";
+            this.LabelPastaImagens.Text = "  [ pasta padrão ] ";
             this.LabelPastaImagens.Click += new System.EventHandler(this.LabelPastaImagens_Click);
             // 
             // EscolherPasta
