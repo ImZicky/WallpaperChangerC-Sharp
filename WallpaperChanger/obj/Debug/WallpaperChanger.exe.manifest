@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="WallpaperChanger.exe" version="1.0.0.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="WallpaperChanger.exe" version="1.0.0.6" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="WallpaperChanger" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -54,17 +54,158 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WallpaperChanger.exe" size="11807728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Runtime.WindowsRuntime.dll" size="28216">
+      <assemblyIdentity name="System.Runtime.WindowsRuntime" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>1ALzPbabgGNICXybMkHIxlZ0Fr4c8tmR+iohNg87eCA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Runtime.WindowsRuntime.UI.Xaml.dll" size="30312">
+      <assemblyIdentity name="System.Runtime.WindowsRuntime.UI.Xaml" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>K53G8LjYRrJafpJsUBnWzG8q3bmeIhJg4JzRgqxWhB0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WallpaperChanger.exe" size="696816">
       <assemblyIdentity name="WallpaperChanger" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BAr9EC5nH321ohaBAgMZcGncEEE4ltyuP+dGslg8kSk=</dsig:DigestValue>
+        <dsig:DigestValue>swqhdQAMOvYosYM0SmJ/ConSIvrqMh5tp4jufmLE1Vo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="google-images-download-master\.gitignore" size="433">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8AqiG10vVe7/o9ZevZmWSBniO1F9HQWTMGJEXF5WrXc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\docs\_static\overrides.css" size="186">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>sT6jVwvFh4i06Bhp59YJhJSTs1BmOc7vlJRbTWN2TyM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\docs\conf.py" size="2256">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>vAE6yM08UIysK9/J2gWJRmO+C7oeDU8609Qv2GzrG0w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\google_images_download\__init__.py" size="171">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>b39cRtQTn1rB0acO8/59yFOh1SaxtwuUNc62AVcrZ74=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\google_images_download\__main__.py" size="128">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>jKRR3nF7PMUtg7i1dgtz7Fhrfmr2obxMLfvu6nwPuAA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\google_images_download\google_images_download.py" size="52513">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>hm83DQ+bvEdmX813FwUMBNGB8UbgMdQYEQ4Vsl0hty0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\images\flow-chart.png" size="33582">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>dzm3AsM1mhBynl3uvaiIW9Au/6W0Bby40tj9rUKG2W0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\Licence.txt" size="1083">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>VO4ZNmIZ110jWxpUzQmvtKURuClxZyabynFc7T2FDrw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\requirements.txt" size="8">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>5oSj6U79RvnF+g6oPGAMutb7R9yc8mIKYvg/vTVSy74=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\setup.py" size="1910">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>UunYLe8eUmkuArDiZgqKqBAYPo2p6Es1oXwZNCq4VF4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\tests\__init__.py" size="0">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\tests\test_google_images_download.py" size="2208">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>onhlBoc5iAorkKwaFX4t5bPo4iG6XGxIjEcjkAbdszQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="google-images-download-master\tests\test_sample.py" size="102">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>i1b1opNC08wyCvKPx99gRXNNJLqy8ya26xJHCG8RXbo=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="WallpaperChanger.exe.config" size="189">
     <hash>
       <dsig:Transforms>

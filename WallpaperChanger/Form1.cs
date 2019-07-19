@@ -11,9 +11,12 @@ using System.Runtime.InteropServices;
 using Microsoft.Win32;
 using System.IO;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace WallpaperChanging
 {
+
+
     public partial class Form1 : Form
     {
 
@@ -72,13 +75,18 @@ namespace WallpaperChanging
                 index = 0;
             }
 
+            // Application now has access to the picked file, setting image to lockscreen.  
+            // This will fail if the file is an invalid format.
+      
 
             FileName = string.Format("{1}\\{2} ", 2, relativePath, fileName);
 
             LabelFileName.Text = FileName.Substring(FileName.LastIndexOf("\\")+1);
             LabelPastaImagens.Text = FileName.Substring(0,FileName.LastIndexOf(LabelFileName.Text)-1);
-            Set();
+            imagemExemplo.BackgroundImage = Image.FromFile(string.Format("{1}\\{2} ", 2, relativePath, fileName));
 
+
+            Set();
         }
 
         private void verificacaoInicial()
@@ -238,8 +246,33 @@ namespace WallpaperChanging
 
         }
 
-        private void LabelIntervaloTempo_Click(object sender, EventArgs e)
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void buttonDownload_Click(object sender, EventArgs e)
+        {
+
+            string anime = textBoxAnime.ToString();
+            string personagem = textBoxPersonagem.ToString();
+            string qtd = textBoxQtd.ToString();
+            string pasta= textBoxPasta.ToString();
+
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = "C:\\Users\\T-Gamer\\AppData\\Local\\Programs\\Python\\Python36\\python.exe";
+            start.WorkingDirectory = @"C:\\Users\\T-Gamer\\Documents\\WallpaperChanger\\google-images-download-master\\google_images_download\\google-images-download.py";
+            start.Arguments = string.Format("--keywords {0}  -sk {1} --limit {2} --format png -o {3} --size large --specific_site https://wall.alphacoders.com ",anime,personagem,qtd,pasta);
+            start.UseShellExecute = false;
+            start.RedirectStandardOutput = true;
+            using (Process process = Process.Start(start))
+            {
+                using (StreamReader reader = process.StandardOutput)
+                {
+                    string result = reader.ReadToEnd();
+                    Console.Write(result);
+                }
+            }
 
         }
     }

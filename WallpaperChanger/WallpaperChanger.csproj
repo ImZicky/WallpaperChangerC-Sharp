@@ -28,6 +28,8 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -87,6 +89,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,6 +101,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="google-images-download-master\docs\.DS_Store" />
+    <None Include="google-images-download-master\docs\arguments.rst" />
+    <None Include="google-images-download-master\docs\examples.rst" />
+    <None Include="google-images-download-master\docs\index.rst" />
+    <None Include="google-images-download-master\docs\installation.rst" />
+    <None Include="google-images-download-master\docs\make.bat" />
+    <None Include="google-images-download-master\docs\Makefile" />
+    <None Include="google-images-download-master\docs\structure.rst" />
+    <None Include="google-images-download-master\docs\troubleshooting.rst" />
+    <None Include="google-images-download-master\docs\usage.rst" />
+    <None Include="google-images-download-master\docs\_static\.DS_Store" />
+    <None Include="google-images-download-master\google_images_download\sample_config.json" />
+    <None Include="google-images-download-master\MANIFEST.in" />
+    <None Include="google-images-download-master\README.rst" />
+    <None Include="google-images-download-master\setup.cfg" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -128,5 +146,33 @@
   <ItemGroup>
     <None Include="Resources\back.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\UwpDesktop.10.0.14393.3\analyzers\dotnet\UwpDesktopAnalyzer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="google-images-download-master\.gitignore" />
+    <Content Include="google-images-download-master\docs\conf.py" />
+    <Content Include="google-images-download-master\docs\_static\overrides.css" />
+    <Content Include="google-images-download-master\google_images_download\google_images_download.py" />
+    <Content Include="google-images-download-master\google_images_download\__init__.py" />
+    <Content Include="google-images-download-master\google_images_download\__main__.py" />
+    <Content Include="google-images-download-master\images\flow-chart.png" />
+    <Content Include="google-images-download-master\Licence.txt" />
+    <Content Include="google-images-download-master\requirements.txt" />
+    <Content Include="google-images-download-master\setup.py" />
+    <Content Include="google-images-download-master\tests\test_google_images_download.py" />
+    <Content Include="google-images-download-master\tests\test_sample.py" />
+    <Content Include="google-images-download-master\tests\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="google-images-download-master\google_images_download\downloads\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\UwpDesktop.10.0.14393.3\build\portable-net45+uap\UwpDesktop.targets" Condition="Exists('..\packages\UwpDesktop.10.0.14393.3\build\portable-net45+uap\UwpDesktop.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\UwpDesktop.10.0.14393.3\build\portable-net45+uap\UwpDesktop.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UwpDesktop.10.0.14393.3\build\portable-net45+uap\UwpDesktop.targets'))" />
+  </Target>
 </Project>
